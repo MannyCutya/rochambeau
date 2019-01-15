@@ -6,80 +6,11 @@
         <title>Rochambeau</title>
     </head>
     <body>
-        <script type ="text/javascript">
-            var plays = ['rock', 'paper', 'scissors'];
-
-            let computerPlay = () => plays[Math.floor(Math.random() * 3)];
-
-            function playRound(playerSelection, computerSelection) {
-
-                if (checkWinner(playerSelection, computerSelection) === 1) {
-                    return `You win! ${playerSelection} beats ${computerSelection}`
-                } else if (checkWinner(playerSelection, computerSelection) === 2) {
-                    return `You lose! ${computerSelection} beats ${playerSelection}`
-                } else if (checkWinner(playerSelection, computerSelection) === 0) {
-                    return "Tie game!";
-                } else {
-                    throw new TypeError("Invalid Input");
-                }
-            }
-
-            function checkWinner(player, cpu) {
-
-                player = player.toLowerCase();
-                cpu = cpu.toLowerCase();
-
-                if (player === "rock") {
-                    switch(cpu) {
-                        case "paper":
-                            return 2;
-                        case "scissors":
-                            return 1;
-                        case "rock":
-                            return 0;
-                    }
-                } else if (player === "paper") {
-                    switch(cpu) {
-                        case "rock":
-                            return 1;
-                        case "scissors":
-                            return 2;
-                        case "paper":
-                            return 0;
-                    }
-                } else if (player === "scissors") {
-                    switch(cpu) {
-                        case "paper":
-                            return 1;
-                        case "rock":
-                            return 2;
-                        case "scissors":
-                            return 0;
-                    }
-                }
-            }
-
-            function game() {
-
-                let rounds = 0;
-                let playerChoice, computerChoice, playerScore = 0, computerScore = 0; 
-
-                const rockBtn = document.createElement('button');
-
-                console.log(playerScore)
-                console.log(computerScore)
-                if (playerScore > computerScore) {
-                    alert("You win!");
-                } else if (computerScore > playerScore) {
-                    alert("You lose fuckin' loser!")
-                } else {
-                    alert('A tie!');
-                }
-
-            }
-
-            game();
-
-        </script>
+        <div id='wrapper'>
+            <button class="button" id="rock">Rock</button>
+            <button class="button" id="paper">Paper</button>
+            <button class="button" id="scissors">Scissors</button>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
